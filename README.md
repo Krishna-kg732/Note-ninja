@@ -205,7 +205,9 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## 👥 Authors
 
-- **Your Name** - [GitHub Profile](https://github.com/yourusername)
+- **Krishna Gupta** - [GitHub Profile](https://github.com/Krishna-kg732)
+
+- **Kunal Shaw** - [GitHub Profile](https://github.com/Krishna-kg732)
 
 ---
 
