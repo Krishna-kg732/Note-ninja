@@ -207,7 +207,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 - **Krishna Gupta** - [GitHub Profile](https://github.com/Krishna-kg732)
 
-- **Kunal Shaw** - [GitHub Profile](https://github.com/Krishna-kg732)
+- **Kunal Shaw** - [GitHub Profile](https://github.com/myselfkunal)
 
 ---
 
