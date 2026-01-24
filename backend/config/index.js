@@ -16,6 +16,8 @@ const config = {
         clientId: process.env.NOTION_CLIENT_ID,
         clientSecret: process.env.NOTION_CLIENT_SECRET,
         redirectUri: process.env.NOTION_REDIRECT_URI || 'http://localhost:3000/auth/callback',
+        apiBaseUrl: 'https://api.notion.com/v1',
+        apiVersion: '2022-06-28',
         oauthUrl: 'https://api.notion.com/v1/oauth/authorize',
         tokenUrl: 'https://api.notion.com/v1/oauth/token'
     },
