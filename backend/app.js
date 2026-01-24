@@ -3,7 +3,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-require('dotenv').config();
+const config = require('./config');
 
 // Import routes
 const meetingsRoutes = require('./routes/meetings.routes');
@@ -19,9 +19,8 @@ const app = express();
 app.use(helmet());
 
 // CORS configuration
-const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(',') || ['http://localhost:3000'];
 app.use(cors({
-  origin: allowedOrigins,
+  origin: config.cors.allowedOrigins,
   credentials: true
 }));
 
@@ -29,8 +28,8 @@ app.use(cors({
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
-// Logging middleware
-if (process.env.NODE_ENV !== 'production') {
+// Logging middleware (dev only)
+if (config.isDevelopment) {
   app.use(morgan('dev'));
 }
 
@@ -39,8 +38,8 @@ app.use(rateLimitMiddleware);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
-  res.status(200).json({ 
-    status: 'OK', 
+  res.status(200).json({
+    status: 'OK',
     message: 'Note Ninja Backend is running',
     timestamp: new Date().toISOString()
   });
@@ -53,7 +52,7 @@ app.use('/auth', authRoutes);
 
 // 404 handler
 app.use((req, res) => {
-  res.status(404).json({ 
+  res.status(404).json({
     error: 'Not Found',
     message: `Route ${req.url} not found`
   });
@@ -64,7 +63,7 @@ app.use((err, req, res, next) => {
   console.error('Error:', err);
   res.status(err.status || 500).json({
     error: err.message || 'Internal Server Error',
-    ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+    ...(config.isDevelopment && { stack: err.stack })
   });
 });
 

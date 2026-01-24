@@ -42,7 +42,7 @@ const notionService = {
             object: 'block',
             type: 'heading_2',
             heading_2: {
-              rich_text: [{ type: 'text', text: { content: '📝 Summary' } }]
+              rich_text: [{ type: 'text', text: { content: 'Summary' } }]
             }
           },
           {
@@ -56,7 +56,7 @@ const notionService = {
             object: 'block',
             type: 'heading_2',
             heading_2: {
-              rich_text: [{ type: 'text', text: { content: '💡 Key Discussion Points' } }]
+              rich_text: [{ type: 'text', text: { content: 'Key Discussion Points' } }]
             }
           },
           {
@@ -70,7 +70,7 @@ const notionService = {
             object: 'block',
             type: 'heading_2',
             heading_2: {
-              rich_text: [{ type: 'text', text: { content: '✅ Action Items' } }]
+              rich_text: [{ type: 'text', text: { content: 'Action Items' } }]
             }
           },
           {
